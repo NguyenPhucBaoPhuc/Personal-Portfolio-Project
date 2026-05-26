@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio | Projects</title>
+    <!-- Shared Styles and Project specific Styles -->
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/projects.css" />
+  </head>
+  <body>
+    <div class="ambient-glow"></div>
+
+    <nav>
+      <a href="./index.html" class="logo"><span>P</span>ortfolio</a>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./projects.html" class="active">Projects</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="projects" class="fade-in">
+        <div class="projects-header">
+          <h2>My <span class="highlight">Projects</span></h2>
+          <p>A selection of some recent work, side projects, and experiments.</p>
+        </div>
+
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web App</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card" data-category="web">
+            <div class="project-image">
+              <span>Image Placeholder</span>
+            </div>
+            <div class="project-info">
+              <span class="project-category">Web App</span>
+              <h3 class="project-title">E-commerce Platform</h3>
+              <p class="project-description">A high-performance modern e-commerce web application with a custom CMS and seamless checkout.</p>
+              <div class="project-links">
+                <a href="#" class="project-link">Live Demo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-category="backend">
+            <div class="project-image">
+              <span>Image Placeholder</span>
+            </div>
+            <div class="project-info">
+              <span class="project-category">Backend</span>
+              <h3 class="project-title">Microservices API</h3>
+              <p class="project-description">A scalable REST API handling thousands of requests per second using Node.js and PostgreSQL.</p>
+              <div class="project-links">
+                <a href="#" class="project-link">GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="design">
+            <div class="project-image">
+              <span>Image Placeholder</span>
+            </div>
+            <div class="project-info">
+              <span class="project-category">Design</span>
+              <h3 class="project-title">Design System</h3>
+              <p class="project-description">A comprehensive UI/UX design system created in Figma for a fintech startup.</p>
+              <div class="project-links">
+                <a href="#" class="project-link">View Case Study →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Bao Phuc. Built with Vite.</p>
+    </footer>
+
+    <script type="module" src="./src/projects.js"></script>
+  </body>
+</html>
