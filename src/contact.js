@@ -17,21 +17,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // Form submission handler
   const form = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
+  const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      // In a real scenario, this is where you'd make a fetch request to a backend/service
-      // For static demo purposes, we'll just show the success message
-      
-      formMessage.classList.add('success');
-      form.reset();
 
-      // Hide message after 5 seconds
-      setTimeout(() => {
-        formMessage.classList.remove('success');
-      }, 5000);
+      // Show loading state on button
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch('https://formspree.io/f/mqejwkpv', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form),
+        });
+
+        if (response.ok) {
+          // Success — show green message and reset form
+          formMessage.textContent = '✅ Thank you! Your message has been sent.';
+          formMessage.className = 'form-message success';
+          form.reset();
+        } else {
+          // Server returned an error
+          formMessage.textContent = '❌ Something went wrong. Please try again.';
+          formMessage.className = 'form-message error';
+        }
+      } catch (err) {
+        // Network error
+        formMessage.textContent = '❌ Network error. Please check your connection and try again.';
+        formMessage.className = 'form-message error';
+      } finally {
+        // Restore button state
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+
+        // Hide message after 6 seconds
+        setTimeout(() => {
+          formMessage.className = 'form-message';
+        }, 6000);
+      }
     });
   }
 });
