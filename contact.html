@@ -1,101 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio | Contact</title>
-    <link rel="stylesheet" href="./src/style.css" />
-    <style>
-      .contact-container {
-        max-width: 600px;
-        margin: 0 auto;
-        background: var(--bg-card);
-        padding: 3rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-      }
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: var(--text-muted);
-        font-size: 0.9rem;
-      }
-      input, textarea {
-        width: 100%;
-        padding: 0.8rem;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        border-radius: 6px;
-        color: var(--text-main);
-        font-family: inherit;
-        transition: border-color 0.3s ease;
-      }
-      input:focus, textarea:focus {
-        outline: none;
-        border-color: var(--accent-primary);
-      }
-      .form-message {
-        display: none;
-        padding: 1rem;
-        border-radius: 6px;
-        margin-top: 1.5rem;
-        text-align: center;
-      }
-      .form-message.success {
-        display: block;
-        background: rgba(46, 204, 113, 0.1);
-        color: #2ecc71;
-        border: 1px solid rgba(46, 204, 113, 0.3);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="ambient-glow"></div>
 
-    <nav>
-      <a href="./index.html" class="logo"><span>P</span>ortfolio</a>
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio | Contact</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <style>
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 3rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
 
-    <main>
-      <section id="contact" class="fade-in">
-        <h2 style="text-align: center;">Get In <span class="highlight">Touch</span></h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">
-          Have a project in mind or just want to say hi? Feel free to message me!
-        </p>
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
 
-        <div class="contact-container">
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" required placeholder="John Doe" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" required placeholder="john@example.com" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" rows="5" required placeholder="Your message here..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-            <div id="formMessage" class="form-message">Thank you! Your message has been sent.</div>
-          </form>
-        </div>
-      </section>
-    </main>
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
 
-    <footer>
-      <p>&copy; <span id="year"></span> Bao Phuc. Built with Vite.</p>
-    </footer>
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-main);
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
 
-    <script type="module" src="./src/contact.js"></script>
-  </body>
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+    }
+
+    .form-message {
+      display: none;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .form-message.success {
+      display: block;
+      background: rgba(46, 204, 113, 0.1);
+      color: #2ecc71;
+      border: 1px solid rgba(46, 204, 113, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ambient-glow"></div>
+
+  <nav>
+    <a href="./index.html" class="logo"><span>P</span>ortfolio</a>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./projects.html">Projects</a></li>
+      <li><a href="./contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="contact" class="fade-in">
+      <h2 style="text-align: center;">Get In <span class="highlight">Touch</span></h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">
+        Have a project in mind or just want to say hi? Feel free to message me!
+      </p>
+
+      <div class="contact-container">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required placeholder="Your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          <div id="formMessage" class="form-message">Thank you! Your message has been sent.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Bao Phuc.</p>
+  </footer>
+
+  <script type="module" src="./src/contact.js"></script>
+</body>
+
 </html>
